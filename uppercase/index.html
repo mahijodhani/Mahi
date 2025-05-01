@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="uppercaseApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Uppercase Name with Submit</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="MainController">
+
+    <h2>Enter your name:</h2>
+    <form ng-submit="submitName()">
+        <input type="text" ng-model="nameInput" placeholder="Type your name here" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <div ng-if="submitted">
+        <h3>Uppercase Result:</h3>
+        <p>{{ submittedName | uppercase }}</p>
+    </div>
+
+    <script>
+        angular.module('uppercaseApp', [])
+            .controller('MainController', function($scope) {
+                $scope.nameInput = '';
+                $scope.submitted = false;
+                $scope.submittedName = '';
+
+                $scope.submitName = function() {
+                    $scope.submittedName = $scope.nameInput;
+                    $scope.submitted = true;
+                };
+            });
+    </script>
+
+</body>
+</html>

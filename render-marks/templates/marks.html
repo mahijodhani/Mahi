@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            padding: 50px;
+            background-color: white;
+            margin-top: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+        }
+        .result {
+            font-size: 1.5rem;
+            padding: 20px;
+            background-color: #ecf0f1;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .pass {
+            color: green;
+        }
+        .fail {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Score Result</h1>
+
+        <div class="result">
+            {% if score >= 40 %}
+                <p class="pass">Pass</p>
+            {% else %}
+                <p class="fail">Fail</p>
+            {% endif %}
+        </div>
+        
+        <p>Your Score: {{ score }}</p>
+    </div>
+
+</body>
+</html>
