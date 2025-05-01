@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            width: 60%;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .feedback-response {
+            margin-top: 20px;
+            background-color: #e8f5e9;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Feedback Form</h1>
+        <form method="POST">
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="feedback">Your Feedback:</label>
+                <textarea id="feedback" name="feedback" rows="5" required></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+
+        {% if name and feedback %}
+        <div class="feedback-response">
+            <h3>Thank you for your feedback, {{ name }}!</h3>
+            <p><strong>Your Feedback:</strong> {{ feedback }}</p>
+        </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>

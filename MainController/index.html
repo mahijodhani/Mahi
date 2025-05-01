@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <title>AngularJS MainController Example</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f6f9;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      max-width: 500px;
+      margin: 50px auto;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    p {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body ng-controller="MainController">
+
+  <div class="container">
+    <h1>AngularJS App</h1>
+    <p>{{ message }}</p>
+    <p>Logged in user: <strong>{{ user.name }}</strong></p>
+  </div>
+
+  <script>
+    var app = angular.module('myApp', []);
+
+    app.controller('MainController', function($scope) {
+      $scope.message = "Welcome to AngularJS!";
+      $scope.user = {
+        name: "Mahi Jodhani"
+      };
+    });
+  </script>
+
+</body>
+</html>
